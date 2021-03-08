@@ -1,0 +1,127 @@
+body{
+
+    background-color: #2c3e50;
+}
+
+* {
+    font-family: "Dancing Script", cursive;
+}
+$textcolor: cadetblue;
+
+header {
+    width: 100%;
+    height: 43vh;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 24px;
+        color: $textcolor;
+    }
+    h1 {
+        color: $textcolor;
+        &:hover {
+            color: rgb(241, 250, 249);
+            font-size: 60px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    }
+    span {
+        font: 1em sans-serif;
+    }
+}
+
+
+@mixin bd-radius() {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+@mixin div-sizing() {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+@mixin div-positions() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;}
+
+.abc, .xyz {
+    @include div-positions();
+    @include div-sizing();
+    @include bd-radius();
+    @include box-shadow(0px 10px 10px black);
+}
+.abc:hover, .xyz:hover{
+    background-color: #172738;
+}
+.abc:active, .xyz:active{
+    transform: translateY(4px);
+    @include box-shadow(0px 0px 5px black);
+}
+
+.fa-twitter, .fa-facebook{
+    font-size: 27px;
+}
+
+
+//search bar styling
+
+.search-container{
+    width: 0px;
+    height: 40px;
+    background-color: #21212c;
+    position: absolute;
+    right: 231px;
+    top: 20px;
+    border-radius: 20px;
+    transform: translateY(-50%, -50%);
+}
+.text-area{
+    width: 0px;
+    margin: 7px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    height: 24px;
+    padding-left: 13px;
+}
+.search-icon{
+    background-color: #fff;
+    border-radius: 14px;
+    padding: 4px 6px;
+    position: relative;
+    top: -29px;
+
+}
+
+.search-container:hover > .text-area{
+    width: 200px;
+}
+.search-container:hover > .search-icon{
+    background-color: blue;
+}
+
+
+
+
+
+
